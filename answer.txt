@@ -1,26 +1,35 @@
-1#Find all the robots from Star Wars.
-select * from robots where source='Star Wars';
+1. Find all the robots from Star Wars.
+SELECT * FROM robots WHERE source= 'Star Wars';
 
-2#Find the robot with an "anxious" personality.
+2. Find the robot with an "anxious" personality.
 SELECT * FROM robots WHERE personality= 'anxious';
 
-3#Find all recipes that are nut free.
+3. Find all recipes that are nut free.
 SELECT * FROM recipes WHERE nut_free= 'T';
 
-4#Count the number of recipes that are gluten free but not vegetarian.
+4. Count the number of recipes that are gluten free but not vegetarian.
+SELECT COUNT(id) FROM recipes WHERE gluten_free= 'T' and vegetarian= 'F';
 
-5#Find the animal with the most legs.
+5. Find the animal with the most legs.
+SELECT MAX(number_of_legs) as Animal_with_most_legs FROM animals;
 
-6#Find the board game that takes the least amount of time to play.
+6. Find the board game that takes the least amount of time to play.
+SELECT MIN(mins_to_play) as Boardgame_that_takes_least_amount_of_time_to_play FROM board_games;
 
-7#Find the recipe that takes the most time to prepare.
+7. Find the recipe that takes the most time to prepare.
+SELECT MAX(minutes_required) as Recipe_that_takes_most_time_to_prepare FROM recipes;
 
-8#Find all the robots whose name starts with the letter M.
+8. Find all the robots whose name starts with the letter M.
+SELECT name FROM robots where name LIKE 'M%';
 
-9#Count the number of board games that can be played by 8 people.
+9. Count the number of board games that can be played by 8 people.
+SELECT COUNT(id) FROM board_games WHERE max_players >= 8;
 
-10#Find all animals that are swimming and egg-laying.
+10. Find all animals that are swimming and egg-laying.
+SELECT name FROM animals WHERE swimming= 'T' and egg_laying= 'T';
 
-11#Find all animals that are swimming and egg-laying but not flying.
+11. Find all animals that are swimming and egg-laying but not flying.
+SELECT name FROM animals WHERE swimming= 'T' and egg_laying= 'T' and flying= 'F';
 
-12#Find the board game that supports the largest number of people.
+12. Find the board game that supports the largest number of people.
+SELECT MAX(max_players) FROM board_games;
